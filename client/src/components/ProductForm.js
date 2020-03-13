@@ -19,11 +19,8 @@ export default ( ) => {
 
     const onSubmitHandler = e =>{
         e.preventDefault();
-        axios.post('http://localhost:8000/api/product', {
-            title:'',
-            price:0,
-            description:''
-        })
+        axios.post('http://localhost:8000/api/product', inputState
+        )
             .then(res => console.log(inputState))
             .catch(err => console.log(err))
     }
