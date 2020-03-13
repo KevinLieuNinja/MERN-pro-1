@@ -22,3 +22,9 @@ module.exports.getProduct = (request, response) => {
         .then(product => response.json(product))
         .catch(err => response.json(err))
 }
+module.exports.deleteAnExistingProduct = (req, res) => {
+    Product.deleteOne({ _id: req.params.id })
+      .then(result => res.json({ result: result }))
+      .catch(err => res.json({ message: "Something went wrong", error: err }));
+};
+

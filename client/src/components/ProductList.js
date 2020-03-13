@@ -1,11 +1,20 @@
 import React from 'react';
-import axios from 'axios';
+import { Link } from "@reach/router";
+
+
+
 
 export default props => {
     return(
         <div>
             {props.product.map((product, i)=> {
-                return <p key={i}>{product.title}, {product.price}, {product.description}</p>
+                return(
+                    <ul>
+                        <li>
+                            <Link to={"/product/" + product._id } key={i} > {product.title} </Link> 
+                        </li>
+                    </ul>
+                )
             })}
         </div>
     )
